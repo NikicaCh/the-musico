@@ -101,7 +101,7 @@ class Player extends Component {
         Shuffle(token);
     }
     async receiveLyrics() {
-        const response = await fetch('http://localhost:3001/');
+        const response = await fetch('https://musico-redirect.herokuapp.com/');
         const body = await response.json();
     
         if (response.status !== 200) throw Error(body.message);
@@ -166,7 +166,7 @@ class Player extends Component {
           .trim();
       }
     sendToBackEnd(url, track) {
-        Axios.post("http://localhost:3001/", {
+        Axios.post("https://musico-redirect.herokuapp.com/", {
                     data: {
                         url,
                         track
